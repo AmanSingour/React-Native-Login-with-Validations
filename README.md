@@ -1,2 +1,2 @@
-# React-Native-Login-
+# React-Native-Login
 Simple React-Native Login Screen
