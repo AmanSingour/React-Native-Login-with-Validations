@@ -1,8 +1,4 @@
 # React-Native-Login
 Simple React-Native Login Screen
 
-<h3>UI</h3>
-  Input with Icons...
-  Neumorphic Design...
-  
-  
+<h3>UI</h3> 
