@@ -2,5 +2,5 @@
 Simple React-Native Login Screen
 
 <h3>UI</h3> 
-![Image of UI](https://drive.google.com/open?id=13s-tV7apu0Sm-NccZWa99yt9P9_tk13F)
+![Image of UI](./images/WhatsApp%20Image%202020-04-07%20at%205.07.49%20AM.jpeg)
 
