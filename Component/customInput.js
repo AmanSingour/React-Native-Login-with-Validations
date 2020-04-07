@@ -9,21 +9,75 @@ import {
 } from 'react-native';
 
 class CustomInput extends Component{
-    state = {
-        errorMessage: ""
+    constructor(props){
+        super(props);
+        this.state={
+            errorMessage: "",
+            email : "",
+            password : "",
+        } 
     }
+
+    _updateValue(value){
+        if(this.props.name == "email"){
+            this.setState({
+                email : value
+            })
+        }else{
+            this.setState({
+                password : value,
+            })
+        }
+        this._validate()
+    }
+
+    _validate(){
+        if (this.props.name == "email") {
+            if(this.state.email == ""){
+                this.setState({
+                    errorMessage: "Email is required."
+                })
+            }else if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.state.email))){
+                this.setState({
+                    errorMessage: "Invalid Email"
+                })
+            }else{
+                this.setState({
+                    errorMessage: ""
+                })
+            }
+        } else {
+            if (this.state.password == "") {
+                this.setState({
+                    errorMessage: "Password is required."
+                })
+            }else if (this.state.password.length <= 6 ) {
+                this.setState({
+                    errorMessage: "Password should contain minimum 6 character."
+                })
+            }else {
+                this.setState({
+                    errorMessage: ""
+                })
+            }
+        }
+    }
+
   render(){
     return(
             <View style={style.container}>
             <View style={[style.inputView, this.state.errorMessage ? style.inputError : {}]}>
                     <Icon name={this.props.icon} size={24} color='#742dd2' />
                     <TextInput
+                        ref = {this.props.name}
                         style={style.input}
                         placeholder={this.props.placeholder}
                         secureTextEntry = {this.props.secure}
+                    onChangeText={(value) => this._updateValue(value)}
+                        onBlur = {() => this._validate() }
                     />
                 </View>
-                <Text style={style.error}>{this.props.errorMessage}</Text>
+                <Text style={style.error}>{this.state.errorMessage}</Text>
 
             </View>
     )

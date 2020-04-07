@@ -28,7 +28,6 @@ class Form extends ValidationComponent{
           name = "email"
           icon = "envelope"
           placeholder = "Email"
-          errorMessage = ""
         />
         <CustomInput
           name = "password"
