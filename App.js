@@ -9,8 +9,13 @@ class App extends Component{
     return(
       <View backgroundColor={bgColor} style={style.Background}>
         <StatusBar backgroundColor={bgColor} barStyle="dark-content" />
-        <Text style = {style.heading}>Login</Text>
-        <Form />
+        <View style={{
+          flex: 1, justifyContent: "center", alignItems: "center"}}>
+          <Text style={style.heading}>Login</Text>
+        </View>
+        <View style={{flex: 1}}>
+          <Form />
+        </View>
       </View>
     )
   }
@@ -29,7 +34,6 @@ const style = StyleSheet.create({
     fontSize: 40,
     fontWeight: "bold",
     textTransform: "uppercase",
-    marginBottom: 150,
   }  
 })
 

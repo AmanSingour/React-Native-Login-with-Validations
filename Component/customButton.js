@@ -2,12 +2,19 @@ import React, { useState } from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 export default CustomButton = () => {
-  const [count, setCount] = useState(0);
-
+  let elv = 10
+  const onClick = () =>{
+    elv = 0
+  };
+  const onRemove = () =>{
+    elv = 10
+  }
   return (
     <View style={styles.container}>
       <TouchableOpacity
-        style={styles.button}
+        style={[styles.button, {elevation: elv}]}
+        onPressIn={onClick()}
+        onPressOut={onRemove()}
       >
         <Text style={{color : "#fff", fontSize: 15, textTransform: "uppercase",}}>Login</Text>
       </TouchableOpacity>
@@ -31,6 +38,5 @@ const styles = StyleSheet.create({
     shadowOffset: {width: -70, height: -70},
     shadowOpacity: 0.3,
     shadowRadius: 50,
-    elevation: 10,
   }
 });
