@@ -1,4 +1,4 @@
-# React-Native-Login
+# React-Native-Login-with-Validations
 
 <h3>Simple React-Native Login Screen with Input Icons and Validations : </h3>
 
