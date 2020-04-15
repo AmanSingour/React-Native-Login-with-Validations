@@ -73,7 +73,7 @@ class CustomInput extends Component{
                         style={style.input}
                         placeholder={this.props.placeholder}
                         secureTextEntry = {this.props.secure}
-                    onChangeText={(value) => this._updateValue(value)}
+                        onChangeText={(value) => this._updateValue(value)}
                         onBlur = {() => this._validate() }
                     />
                 </View>

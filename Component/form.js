@@ -4,23 +4,7 @@ import { View, StyleSheet } from 'react-native';
 import CustomInput from './customInput';
 import CustomButton from './customButton';
 
-import ValidationComponent from 'react-native-form-validator';
-
-class Form extends ValidationComponent{
-  constructor(props) {
-    super(props);
-    this.state = {
-      height: 60,
-      email: "amansingour15@gmail.com",
-      password: "123456"
-    };
-  }
-
-  validate() {
-    this.validate({
-      email: { email: true, required: true }
-    });
-  }
+class Form extends Component{
   render(){
     return(
       <View >
